@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useCallback, useState } from 'react'
 
-function App() {
+export default function App() {
+  const[length, setlength] = useState(8)
+  const[numberAllowed, setnumberAllowed] = useState(false);
+  const[characterAllowed, setcharacterAllowed] = useState(false);
+  const[Password, setpassword] = useState()
+
+  const passwordGenerator = useCallback(()=>{
+    let pass = ""
+    let str = "ABCDEFGHIJKLMNIOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+    if(numberAllowed) str +="0123456789"
+    if(characterAllowed) str+="@#$%^&*"
+    for(let i=0;i<=Array.length;i++){
+      
+    }
+
+
+
+  }, [length,numberAllowed, characterAllowed, password])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className='text-4 my-5 text-center'>Password Generator</h1>
     </div>
-  );
+  )
 }
-
-export default App;
